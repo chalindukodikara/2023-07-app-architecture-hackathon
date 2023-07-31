@@ -12,13 +12,13 @@ import Login from './pages/Login';
 import ViewActualVisit from './pages/ViewActualVisit';
 
 const authConfig = {
-    "baseUrl": "https://api.asgardeo.io/t/architecturemindmeld",
-    "clientID": "nzsVQ5DJMfS8530VnrhJufYXTJMa",
+    "baseUrl": "https://api.asgardeo.io/t/choreoplayground",
+    "clientID": "uVAkdhO7111qUTrJBroVkmJFM7Qa",
     "scope": [
         "openid",
-        "profile",
-        "houseno",
-        "urn:architecturemindmeld:visitservicevisit420:resident"
+        "profile"
+        // "houseno",
+        // "urn:architecturemindmeld:visitservicevisit420:resident"
     ],
     "signInRedirectURL": "https://" + window.location.host,
     "signOutRedirectURL": "https://" + window.location.host
