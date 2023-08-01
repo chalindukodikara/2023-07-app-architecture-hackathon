@@ -16,9 +16,9 @@ const authConfig = {
     "clientID": "yr2NuXKmJpfka1aVyTdRTTUHESEa",
     "scope": [
         "openid",
-        "profile"
+        "profile",
         // "houseno",
-        // "urn:architecturemindmeld:visitservicevisit420:resident"
+        "urn:choreoplayground:chalinduresidentapireside:resident"
     ],
     "signInRedirectURL": "https://" + window.location.host,
     "signOutRedirectURL": "https://" + window.location.host
