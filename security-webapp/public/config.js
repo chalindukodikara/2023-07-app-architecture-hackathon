@@ -1,7 +1,7 @@
 window.config = {
     signInRedirectURL: "http://localhost:3000",
     signOutRedirectURL: "http://localhost:3000",
-    clientId: "c0s49sUBd3R5HYihrJUfVzLSy08a",
+    clientId: "VSlB77mFFz607JWIotdpWtx6_Wga",
     asgardeoBaseURL: "https://api.asgardeo.io/t/architecturemindmeld",
     appScopes:"openid email profile urn:architecturemindmeld:residentsresident5c6:security urn:architecturemindmeld:visitservicevisit420:security urn:architecturemindmeld:visitservicevisit420:resident",
     appName:"SecurityWebApp_Sandbox",
