@@ -12,7 +12,8 @@ configurable string visitStatAPIUrl = ?;
 configurable string visitStatAPITokenURL = ?;
 configurable string visitStatAPIConsumerKey = ?;
 configurable string visitStatAPIConsumerSecret = ?;
-configurable string scopesOfAPI = "resident";
+
+string scopesOfAPI = "resident";
 
 // Configuring Google Sheets API
 sheets:ConnectionConfig spreadsheetConfig = {
