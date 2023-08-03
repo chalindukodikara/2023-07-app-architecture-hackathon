@@ -12,9 +12,23 @@ configurable string visitStatAPIUrl = ?;
 configurable string visitStatAPITokenURL = ?;
 configurable string visitStatAPIConsumerKey = ?;
 configurable string visitStatAPIConsumerSecret = ?;
-configurable string usernameScope = "resident1@gmail.com";
-configurable string passwordScope = "Resident1@";
-configurable string[] scopesAPI = ["urn:choreoplayground:chalinduvisitapivisit420:resident", "urn:choreoplayground:chalinduvisitapivisit420:security"];
+configurable string usernameScope = ?;
+configurable string passwordScope = ?;
+configurable string[] scopesAPI = ?;
+
+// configurable string refreshToken = "1//04x4QDZJ9g3yXCgYIARAAGAQSNwF-L9IrGNAwDV657zfuTH4GFjIi-iAzgQBlZofh-QSqoZMFReweV4VM3EPSCEo2Q55-zdG9JA8";
+// configurable string clientId = "1020932192395-92dc5upu0ltgntvfjhkk5ut4p6roggdu.apps.googleusercontent.com";
+// configurable string clientSecret = "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";
+// configurable string spreadsheetId = "1LDqFosOh9i_QQtyw63RY81Yn7E2eCAt4LzwUgZl2ep0";
+// configurable string sheetName = "visitorstats";
+// configurable string visitStatAPIUrl = "https://2c6c3c6e-fa65-4e8d-8943-215214887ec8-dev.e1-us-east-azure.choreoapis.dev/zrvn/chalinduvisitapi/visit-420/1.0.0";
+// configurable string visitStatAPITokenURL = "https://api.asgardeo.io/t/choreoplayground/oauth2/token";
+// configurable string visitStatAPIConsumerKey = "vHDlS7rtcgEDR0OXZktxW9NLBi4a";
+// configurable string visitStatAPIConsumerSecret = "ThoKlxm98RMV2Fd9j6PDX3WIdXW1mefwvvVB22TS8X0a";
+// configurable string usernameScope = "resident1@gmail.com";
+// configurable string passwordScope = "Resident1@";
+// configurable string[] scopesAPI = ["urn:choreoplayground:chalinduvisitapivisit420:resident", "urn:choreoplayground:chalinduvisitapivisit420:security"];
+
 
 // Configuring Google Sheets API
 sheets:ConnectionConfig spreadsheetConfig = {
@@ -71,11 +85,12 @@ public function main() {
     http:Client|error visitClient = new (visitStatAPIUrl,
         auth = {
             tokenUrl: visitStatAPITokenURL,
-            username: usernameScope,
-            password: passwordScope,
             clientId: visitStatAPIConsumerKey,
             clientSecret: visitStatAPIConsumerSecret,
-            scopes: scopesAPI
+            scopes: scopesAPI,
+            username: usernameScope,
+            password: passwordScope
+
         }
     );
     if visitClient is error {
