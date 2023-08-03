@@ -74,7 +74,9 @@ public function main() {
             clientId: visitStatAPIConsumerKey,
             clientSecret: visitStatAPIConsumerSecret,
             scopes: scopesOfAPI,
-            assertion: accessToken
+            username: "resident1@gmail.com",
+            password: "Resident1@"
+            
         }
     );
     if visitClient is error {
