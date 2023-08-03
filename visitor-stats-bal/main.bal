@@ -12,9 +12,9 @@ configurable string visitStatAPIUrl = ?;
 configurable string visitStatAPITokenURL = ?;
 configurable string visitStatAPIConsumerKey = ?;
 configurable string visitStatAPIConsumerSecret = ?;
-configurable string username = "resident1@gmail.com";
-configurable string password = "Resident1@";
-configurable string scopes = "urn:choreoplayground:chalinduvisitapivisit420:resident";
+configurable string usernameScope = "resident1@gmail.com";
+configurable string passwordScope = "Resident1@";
+configurable string[] scopesAPI = ["urn:choreoplayground:chalinduvisitapivisit420:resident", "urn:choreoplayground:chalinduvisitapivisit420:security"];
 
 // Configuring Google Sheets API
 sheets:ConnectionConfig spreadsheetConfig = {
@@ -73,9 +73,9 @@ public function main() {
             tokenUrl: visitStatAPITokenURL,
             clientId: visitStatAPIConsumerKey,
             clientSecret: visitStatAPIConsumerSecret,
-            scopes: scopes,
-            username: username,
-            password: password
+            scopes: scopesAPI,
+            username: usernameScope,
+            password: passwordScope
         }
     );
     if visitClient is error {
