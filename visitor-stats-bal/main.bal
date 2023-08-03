@@ -80,18 +80,26 @@ public function main() {
     error? clearAllBySheetName = spreadsheetClient->clearAllBySheetName(spreadsheetId, sheetName);
     error? append = spreadsheetClient->appendRowToSheet(spreadsheetId, sheetName,
     ["Date", "In Time", "Out Time", "House", "Visitor Name", "Visitor NIC", "Vehicle Number", "Visitor Phone", "Comment"]);
-
-
+    
+    
     http:Client|error visitClient = new (visitStatAPIUrl,
-        auth = {
-            tokenUrl: visitStatAPITokenURL,
-            clientId: visitStatAPIConsumerKey,
-            clientSecret: visitStatAPIConsumerSecret,
-            scopes: scopesAPI,
-            username: usernameScope,
-            password: passwordScope
+            auth = {
+                tokenUrl: visitStatAPITokenURL,
+                clientId: visitStatAPIConsumerKey,
+                clientSecret: visitStatAPIConsumerSecret
 
-        }
+            }
+
+    // http:Client|error visitClient = new (visitStatAPIUrl,
+    //     auth = {
+    //         tokenUrl: visitStatAPITokenURL,
+    //         clientId: visitStatAPIConsumerKey,
+    //         clientSecret: visitStatAPIConsumerSecret,
+    //         scopes: scopesAPI,
+    //         username: usernameScope,
+    //         password: passwordScope
+
+    //     }
     );
     if visitClient is error {
         io:println("Error while initializing the client.");
