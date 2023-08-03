@@ -71,11 +71,11 @@ public function main() {
     http:Client|error visitClient = new (visitStatAPIUrl,
         auth = {
             tokenUrl: visitStatAPITokenURL,
+            username: usernameScope,
+            password: passwordScope,
             clientId: visitStatAPIConsumerKey,
             clientSecret: visitStatAPIConsumerSecret,
-            scopes: scopesAPI,
-            username: usernameScope,
-            password: passwordScope
+            scopes: scopesAPI
         }
     );
     if visitClient is error {
