@@ -14,6 +14,7 @@ configurable string visitStatAPIConsumerKey = ?;
 configurable string visitStatAPIConsumerSecret = ?;
 
 string scopesOfAPI = "resident";
+string accessToken = "eyJ4NXQiOiJZVGxsTVRnelltSXhZamM0TXpGallqRmpNbU15T1dOak5qVTBOR0V6TURFME1HSmpaV1JrWldNeFlqRmhaVEU1T0dJeE5UVmhaR014Tnpoa016WmhaUSIsImtpZCI6IllUbGxNVGd6WW1JeFlqYzRNekZqWWpGak1tTXlPV05qTmpVME5HRXpNREUwTUdKalpXUmtaV014WWpGaFpURTVPR0l4TlRWaFpHTXhOemhrTXpaaFpRX1JTMjU2IiwidHlwIjoiYXQrand0IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzYWViYTE0OC01OGNiLTRhYmUtYmY3YS03YWVkMjdhY2I0NjQiLCJhdXQiOiJBUFBMSUNBVElPTiIsImF1ZCI6WyJ1eTljdFB4V1hpeERoa1NMNTJHZ3c5R1NicnNhIiwiY2hvcmVvOmRlcGxveW1lbnQ6cHJvZHVjdGlvbiJdLCJuYmYiOjE2OTEwMzY0NjcsImF6cCI6InV5OWN0UHhXWGl4RGhrU0w1MkdndzlHU2Jyc2EiLCJvcmdfaWQiOiIyYzZjM2M2ZS1mYTY1LTRlOGQtODk0My0yMTUyMTQ4ODdlYzgiLCJpc3MiOiJodHRwczpcL1wvYXBpLmFzZ2FyZGVvLmlvXC90XC9jaG9yZW9wbGF5Z3JvdW5kXC9vYXV0aDJcL3Rva2VuIiwiZXhwIjoxNjkxMDM3MzY3LCJvcmdfbmFtZSI6ImNob3Jlb3BsYXlncm91bmQiLCJpYXQiOjE2OTEwMzY0NjcsImp0aSI6IjhkODE3MGNmLWZmMGMtNDZkNS1iM2YwLTJjODlkMDI5MGQ4YiIsImNsaWVudF9pZCI6InV5OWN0UHhXWGl4RGhrU0w1MkdndzlHU2Jyc2EifQ.BMaelJNa7iGxVtckLagtE-Lpl3lM0wLDEkGDMpdRAYLiEtnZzgqLwxkMThw6YrDLOUjNRfdsYVYjHDUII24SDv_mfniZtTLaqdZpCP3lih6pCJSx8ABDzj79TpIv1FnF_05ct477XCmVInSBVr63_HKPLRWt22JgdtH7sBdC4DggCvd1YvrlVrjxSpRu4Ao_kmtfiPKAOyVGGKVc9Nzr_Icg8bMiZ2HvhrhbH1bmwsKkwCcl3Kfeq7FiPDemwvM8mANauR1hrIsutL-Orc4dUxIvEgJUBE7D4nphzd4K1ccgQX74q8SOGw2kszeqqtY5rPjPsnaaPGoP9PwHqCsSNQ";
 
 // Configuring Google Sheets API
 sheets:ConnectionConfig spreadsheetConfig = {
@@ -72,7 +73,8 @@ public function main() {
             tokenUrl: visitStatAPITokenURL,
             clientId: visitStatAPIConsumerKey,
             clientSecret: visitStatAPIConsumerSecret,
-            scopes: scopesOfAPI
+            scopes: scopesOfAPI,
+            assertion: accessToken
         }
     );
     if visitClient is error {
