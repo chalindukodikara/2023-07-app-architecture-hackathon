@@ -12,9 +12,9 @@ configurable string visitStatAPIUrl = ?;
 configurable string visitStatAPITokenURL = ?;
 configurable string visitStatAPIConsumerKey = ?;
 configurable string visitStatAPIConsumerSecret = ?;
-configurable string usernameScope = ?;
-configurable string passwordScope = ?;
-configurable string[] scopesAPI = ?;
+// configurable string usernameScope = ?;
+// configurable string passwordScope = ?;
+// configurable string[] scopesAPI = ?;
 
 // configurable string refreshToken = "1//04x4QDZJ9g3yXCgYIARAAGAQSNwF-L9IrGNAwDV657zfuTH4GFjIi-iAzgQBlZofh-QSqoZMFReweV4VM3EPSCEo2Q55-zdG9JA8";
 // configurable string clientId = "1020932192395-92dc5upu0ltgntvfjhkk5ut4p6roggdu.apps.googleusercontent.com";
@@ -80,7 +80,6 @@ public function main() {
     error? clearAllBySheetName = spreadsheetClient->clearAllBySheetName(spreadsheetId, sheetName);
     error? append = spreadsheetClient->appendRowToSheet(spreadsheetId, sheetName,
     ["Date", "In Time", "Out Time", "House", "Visitor Name", "Visitor NIC", "Vehicle Number", "Visitor Phone", "Comment"]);
-    
     
     http:Client|error visitClient = new (visitStatAPIUrl,
             auth = {
