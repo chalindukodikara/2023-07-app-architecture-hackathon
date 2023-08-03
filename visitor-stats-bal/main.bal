@@ -12,9 +12,9 @@ configurable string visitStatAPIUrl = ?;
 configurable string visitStatAPITokenURL = ?;
 configurable string visitStatAPIConsumerKey = ?;
 configurable string visitStatAPIConsumerSecret = ?;
-configurable string username = ?;
-configurable string password = ?;
-configurable string scopes = ?;
+configurable string username = "resident1@gmail.com";
+configurable string password = "Resident1@";
+configurable string scopes = "urn:choreoplayground:chalinduvisitapivisit420:resident";
 
 // Configuring Google Sheets API
 sheets:ConnectionConfig spreadsheetConfig = {
