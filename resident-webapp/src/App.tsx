@@ -17,7 +17,7 @@ const authConfig = {
     "scope": [
         "openid",
         "profile",
-        // "houseno",
+        "houseno",
         "urn:choreoplayground:chalinduvisitapivisit420:resident"
         // "urn:choreoplayground:chalinduresidentapireside:resident"
     ],
